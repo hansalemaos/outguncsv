@@ -1,6 +1,6 @@
 
 # Finds the right CSV separator and excludes bad lines
-
+### pip install outguncsv
 #### Example:
 ```python
 
