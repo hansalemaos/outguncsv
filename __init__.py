@@ -87,12 +87,21 @@ def get_csv_sep(file):
 
 
 def _openfile(key):
+
     if os.path.exists(key):
-        with open(key, mode="rb") as f:
-            data = f.read()
+        try:
+            with open(key, mode="rb") as f:
+                data = f.read()
+            return data
+        except Exception as fe:
+            print(fe)
+            return data
     else:
-        with requests.get(url=key) as response:
-            data = response.content
+        try:
+            with requests.get(url=key) as response:
+                data = response.content
+        except Exception as fe:
+            pass
     return data
 
 
